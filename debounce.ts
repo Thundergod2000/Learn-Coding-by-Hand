@@ -43,3 +43,22 @@ export function debounce3(func:Function, wait:number): Function {
       }, wait)
     }
 }
+
+
+export function debouce4 (func:Function, wait:number) {
+  let timeoutID:ReturnType< typeof setTimeout>;
+  return function (...args:unknown[]) {
+    clearTimeout(timeoutID)
+    timeoutID = setTimeout(() => {
+      func(args)
+    }, wait);
+  }
+}
+
+const search = debouce4(()=>{
+  console.log("Searching for logs")
+},1000)
+
+const search2 = debounce((query: string) => {
+  console.log("Searching for:", query);
+}, 500);
