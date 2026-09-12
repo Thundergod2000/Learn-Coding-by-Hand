@@ -62,3 +62,13 @@ const search = debouce4(()=>{
 const search2 = debounce((query: string) => {
   console.log("Searching for:", query);
 }, 500);
+
+export function debounce5 (func:Function, wait: number) {
+  let timeoutID: ReturnType<typeof setTimeout>
+  return function (...args:unknown[]) {
+    clearTimeout(timeoutID)
+    timeoutID = setTimeout(() => {
+      func(args)
+    }, wait);
+  }
+}

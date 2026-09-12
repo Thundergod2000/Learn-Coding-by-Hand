@@ -12,3 +12,10 @@ export function flatten1(value: unknown[]):unknown[]{
 }
 
 console.log(flatten1([1,[2]]))
+
+
+export function flatten2 (value:unknown[]): unknown[] {
+  return value.flat() 
+}
+
+console.log(flatten2([1,[2]]))
