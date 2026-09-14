@@ -3,6 +3,7 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import Debounce from './practice/debounce'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -38,6 +39,7 @@ function App() {
             <use href="/icons.svg#documentation-icon"></use>
           </svg>
           <h2>Documentation</h2>
+          <Debounce/>
           <p>Your questions, answered</p>
           <ul>
             <li>
